@@ -27,19 +27,19 @@ public class BoardSpec {
     private static final String DEVICE_IMX6UL_PICO = "imx6ul_pico";
     private static final String DEVICE_IMX7D_PICO = "imx7d_pico";
 
-    private static final int PIN_13 = 0;
-    private static final int PIN_15 = 1;
-    private static final int PIN_16 = 2;
-    private static final int PIN_18 = 3;
-    private static final int PIN_22 = 4;
-    private static final int PIN_29 = 5;
-    private static final int PIN_31 = 6;            //for google simplepio/blink application
-    private static final int PIN_32 = 7;
-    private static final int PIN_35 = 8;
-    private static final int PIN_36 = 9;
-    private static final int PIN_37 = 10;
-    private static final int PIN_38 = 11;
-    private static final int PIN_40 = 12;           //for google simplepio/button application
+    public static final int PIN_13 = 0;
+    public static final int PIN_15 = 1;
+    public static final int PIN_16 = 2;
+    public static final int PIN_18 = 3;
+    public static final int PIN_22 = 4;
+    public static final int PIN_29 = 5;
+    public static final int PIN_31 = 6;            //for google simplepio/blink application
+    public static final int PIN_32 = 7;
+    public static final int PIN_35 = 8;
+    public static final int PIN_36 = 9;
+    public static final int PIN_37 = 10;
+    public static final int PIN_38 = 11;
+    public static final int PIN_40 = 12;           //for google simplepio/button application
 
     public static BoardSpec getInstance() {
         return instance;
@@ -82,11 +82,11 @@ public class BoardSpec {
         }
     }
 
-    public static String getButtonGpioPin() {
+    public static String getGoogleSampleButtonGpioPin() {
         return BoardSpec.getInstance().getGpioPin(PIN_40);
     }
 
-    public static String getLedGpioPin() {
+    public static String getGoogleSampleLedGpioPin() {
         return BoardSpec.getInstance().getGpioPin(PIN_31);
     }
 
@@ -94,7 +94,7 @@ public class BoardSpec {
         return BoardSpec.getInstance().getPwm(0);
     }
 
-    public static String getSpeakerPwmPin() {
+    public static String getGoogleSampleSpeakerPwmPin() {
         return BoardSpec.getInstance().getPwm(1);
     }
 

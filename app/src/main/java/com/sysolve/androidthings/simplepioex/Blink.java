@@ -25,7 +25,7 @@ import com.sysolve.androidthings.simplepioex.MainActivity;
 import java.io.IOException;
 
 public class Blink extends Thread {
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = Blink.class.getSimpleName();
 
     public boolean ledOn = false;
 
@@ -33,10 +33,12 @@ public class Blink extends Thread {
 
     public Gpio gpio;
 
-    public Blink(Gpio mLedGpio, int blinkInterval_ms) throws Exception {
+    public Blink(Gpio mLedGpio, int blinkInterval_ms, boolean initOn) throws Exception {
         this.blinkInterval_ms = blinkInterval_ms;
+
         this.gpio = mLedGpio;
-        this.gpio.setDirection(Gpio.DIRECTION_OUT_INITIALLY_LOW);
+        this.ledOn = initOn;
+        this.gpio.setDirection(initOn? Gpio.DIRECTION_OUT_INITIALLY_HIGH : Gpio.DIRECTION_OUT_INITIALLY_LOW);
     }
 
     public void close() {
@@ -55,6 +57,7 @@ public class Blink extends Thread {
             ledOn = !ledOn;
             try {
                 gpio.setValue(ledOn);
+                Log.i(TAG, "Toggle LED ["+gpio.getName() + "] " + (ledOn? "On":"Off"));
             } catch (IOException e) {
                 Log.i(TAG, e.getMessage(), e);
             }
