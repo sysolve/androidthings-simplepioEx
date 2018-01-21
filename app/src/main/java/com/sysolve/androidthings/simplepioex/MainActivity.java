@@ -95,7 +95,7 @@ public class MainActivity extends Activity {
         if (mButtonGpio!=null) try {
             mButtonGpio.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e(TAG, e.getMessage(), e);
         }
     }
 
