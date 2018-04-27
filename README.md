@@ -4,6 +4,9 @@ Android Things samples from Sysolve IoT Open Source Project
 Android Things Simple PIO扩展案例 - 报警灯
 ====
 
+代码已升级到Android Things Developer Preview 8，建议先阅读我的《Android Things DP8新特性》一文，了解DP8中需要注意的地方。
+https://zhuanlan.zhihu.com/p/36168138
+
 这是一个Android Things Simple PIO的扩展案例，使用入门开发配件包中的两个LED灯，1个蜂鸣器，1个按钮，实现LED灯闪烁、按钮响应、PWM驱动蜂鸣器功能。
 
 ![实物效果](https://github.com/sysolve/androidthings-simplepioEx/blob/master/photo.png)
